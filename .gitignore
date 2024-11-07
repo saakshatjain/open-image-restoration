@@ -1,0 +1,33 @@
+*.pyc
+fasterai/*
+fasterai
+fasterai/
+./fasterai/
+./fasterai/*
+/fasterai
+*fasterai
+*/fasterai
+*.jpg
+*.png
+*.PNG
+*.JPG
+*.zip
+/__pycache__
+/DeOldify
+/DNCNN_ignored
+*_ignored
+./denoiser_NLRN_DNCNN.py
+MyImages/
+.ipynb_checkpoints
+
+*/.ipynb_checkpoints
+denoiser_NLRN_DNCNN.py
+log.err
+log.out
+.*  # ignore all hidden files and folders
+
+!/.gitignore  # explicitly do not ignore .gitignore
+!/White paper - super-resolution (french)/Whitepapersuperresolution_fichiers/*.png
+!/blog image restoration/*.png
+
+
