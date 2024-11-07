@@ -71,7 +71,7 @@ class ImageRestorer:
 
 						#resize only if larger than limit
 						if width > self.size[0] or height > self.size[1]:
-							im.thumbnail(self.size,Image.ANTIALIAS)
+							im.thumbnail(self.size,Image.LANCZOS)
 
 					#save as png (and remove previous version if inputdir = outputdir)
 					path, file = os.path.split(orig)
