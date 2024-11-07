@@ -214,7 +214,7 @@ def preprocess(input_dir, gray = True, resize = True, size = (1000,1000)):
 
 				#resize only if larger than limit
 				if width > size[0] or height > size[1]:
-					im.thumbnail(size,Image.ANTIALIAS)
+					im.thumbnail(size,Image.LANCZOS)
 
 			#save as png (and remove previous version)
 			f, e = os.path.splitext(orig)
@@ -385,10 +385,10 @@ def concat_images(img_list, labels=[], imagetype=None, sameheight=True, imagewid
     if ((len(set(heights)) > 1) & sameheight) or (imageheight is not None) or (imagewidth is not None):
         imageheight = imageheight or min(heights)
         if imagewidth is not None:
-            images = [im.resize((int(imagewidth), int(imageheight)), Image.ANTIALIAS) if sameheight else
-                      im.resize((int(imagewidth), int(im.height * imagewidth / im.width)), Image.ANTIALIAS) for im in images]
+            images = [im.resize((int(imagewidth), int(imageheight)), Image.LANCZOS) if sameheight else
+                      im.resize((int(imagewidth), int(im.height * imagewidth / im.width)), Image.LANCZOS) for im in images]
         else:
-            images = [im.resize((int(im.width * imageheight / im.height), imageheight), Image.ANTIALIAS) for im in images]
+            images = [im.resize((int(im.width * imageheight / im.height), imageheight), Image.LANCZOS) for im in images]
 
     widths, heights = zip(*(i.size for i in images))
     total_width = sum(widths)
